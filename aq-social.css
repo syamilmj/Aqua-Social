@@ -1,0 +1,17 @@
+/** 
+ * Aqua Social CSS
+ *
+ * @package Aqua Social
+ * @author Syamil MJ
+ * @uri http://aquagraphite.com
+ */
+
+.aq-social-buttons {
+	display:block;
+	height: 30px;
+}
+
+.aq-social-buttons .social-button {
+	float: left;
+	margin: 0 10px 0 0;
+}
