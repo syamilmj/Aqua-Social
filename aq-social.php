@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Aqua Social
-Plugin URI: http://aquagraphite.com/
+Plugin URI: http://syamilmj.com/
 Description: Social sharing buttons
 Version: 0.2
 Author: Syamil MJ
-Author URI: http://aquagraphite.com/
+Author URI: http://syamilmj.com/
 */
 
 /**
