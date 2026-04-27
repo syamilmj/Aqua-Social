@@ -52,18 +52,21 @@ class AQ_Social {
 	function html() {
 		$tail = "'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no'); return false;";
 
-		$tw_url = 'https://twitter.com/intent/tweet?url=' . rawurlencode( $this->link ) . '&text=' . rawurlencode( $this->title );
-		$fb_url = 'https://www.facebook.com/sharer/sharer.php?u=' . rawurlencode( $this->link );
-		$li_url = 'https://www.linkedin.com/sharing/share-offsite/?url=' . rawurlencode( $this->link );
+		$tw_url  = 'https://twitter.com/intent/tweet?url=' . rawurlencode( $this->link ) . '&text=' . rawurlencode( $this->title );
+		$fb_url  = 'https://www.facebook.com/sharer/sharer.php?u=' . rawurlencode( $this->link );
+		$li_url  = 'https://www.linkedin.com/sharing/share-offsite/?url=' . rawurlencode( $this->link );
+		$gpt_url = 'https://chatgpt.com/?q=' . rawurlencode( 'Tell me about: ' . $this->title . ' ' . $this->link );
 
-		$tw_onclick = "window.open('" . esc_js( $tw_url ) . "', 'tweet', {$tail}";
-		$fb_onclick = "window.open('" . esc_js( $fb_url ) . "', 'facebook_share', {$tail}";
-		$li_onclick = "window.open('" . esc_js( $li_url ) . "', 'linkedin_share', {$tail}";
+		$tw_onclick  = "window.open('" . esc_js( $tw_url ) . "', 'tweet', {$tail}";
+		$fb_onclick  = "window.open('" . esc_js( $fb_url ) . "', 'facebook_share', {$tail}";
+		$li_onclick  = "window.open('" . esc_js( $li_url ) . "', 'linkedin_share', {$tail}";
+		$gpt_onclick = "window.open('" . esc_js( $gpt_url ) . "', 'chatgpt', {$tail}";
 
 		$output  = '<div id="aq-social-buttons-' . $this->post_id . '" class="aq-social-buttons">';
 		$output .= '<div class="social-button social-button-twitter"><a href="#" onclick="' . $tw_onclick . '">Tweet</a></div>';
 		$output .= '<div class="social-button social-button-facebook"><a href="#" onclick="' . $fb_onclick . '">FB Share</a></div>';
 		$output .= '<div class="social-button social-button-linkedin"><a href="#" onclick="' . $li_onclick . '">LinkedIn</a></div>';
+		$output .= '<div class="social-button social-button-chatgpt"><a href="#" onclick="' . $gpt_onclick . '">Ask ChatGPT</a></div>';
 		$output .= '</div>';
 
 		return $output;
